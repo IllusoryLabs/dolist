@@ -1,7 +1,7 @@
 <?php
 session_start();
 // Change this to your connection info.
-$DATABASE_HOST = 'do-list.me';
+$DATABASE_HOST = 'https://illusorylabs.github.io/dolist/';
 $DATABASE_USER = 'root';
 $DATABASE_PASS = '';
 $DATABASE_NAME = 'phplogin';
