@@ -38,7 +38,7 @@ if ($stmt = $con->prepare('SELECT id, password FROM accounts WHERE username = ?'
             $_SESSION['loggedin'] = TRUE;
             $_SESSION['name'] = $_POST['username'];
             $_SESSION['id'] = $id;
-            echo '<p>Welcome ' . $_SESSION['name'] . '!</p>';
+            header('Location: home.php');
         } else {
             // Incorrect password
             echo '<p>Incorrect password!</p>';
