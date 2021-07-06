@@ -278,3 +278,14 @@ body.loggedin {
     width: 100%;
   }
 }
+
+
+.alignLeft {
+  width: 450px;
+  float: left;
+}
+
+.alignRight {
+  width: 450px;
+  float: right;
+}

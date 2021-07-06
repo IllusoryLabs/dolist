@@ -1,9 +1,13 @@
 <?php
 include 'reminders.php';
 
-if ($numReminders > 0) {
-    //code here
-} else  if ($numReminders === 0 && !expiredReminders){
-    echo 'Hooray! You\'ve completed all of your current goals!';
+if (implode($remindersCount) !== '0') {
+    echo 'Here are some personal reminders you have that are ending soon:
+    <br><br>';
+    echo $result;
+}
+
+if (implode($remindersCount) === '0') {
+    echo 'We\'d give you some of your current reminders, but you don\'t have any! Good job!';
 }
 ?>

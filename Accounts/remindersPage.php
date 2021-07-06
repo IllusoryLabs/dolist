@@ -1,18 +1,19 @@
 <?php
-include 'main.php';
-check_loggedin($pdo);
+include 'reminders.php';
 ?>
+
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="utf-8">
+    <head>
+        <meta charset="utf-8">
 		<meta name="viewport" content="width=device-width,minimum-scale=1">
 		<title>DoList</title>
 		<link href="style.css" rel="stylesheet" type="text/css">
 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
-	</head>
-	<body class="loggedin">
-		<nav class="navtop">
+    </head>
+
+    <body class="loggedin">
+        <nav class="navtop">
 			<div>
 				<h1>DoList</h1>
 				<a href="home.php"><i class="fas fa-home"></i>Home</a>
@@ -26,26 +27,33 @@ check_loggedin($pdo);
 			</div>
 		</nav>
 		<div class="content">
-			<h2>Welcome Back, <?=$_SESSION['name']?>!</h2>
-			<p class="block">
+			<div class="alignLeft">
 				<?php
-				include 'endingSoon.php';
-				?> 
-			</p>
+				ifReminders($remindersCount);
+				?>
+
+				<p class="block">
+					<?php
+					DisplayEndingReminders($remindersCount, $result);
+					ifNoEndingReminders($remindersCount);
+    	        ?>
+				</p>
+			</div>
 		</div>
 
 		<div class="content">
-			<p class="block"
-			
-			>Here are some groups you're in:
+			<div class="alignRight">
+				<?php
+					ifEndingReminders($remindersCount);
+					?>
 
-			<br><br>
-
-			<?php
-			include 'listGroups.php';
-			?> 
-
-			</p>
+				<p class="block">
+					<?php
+					DisplayEndingReminders($remindersCount, $result);
+					ifNoEndingReminders($remindersCount);
+            	?>
+				</p>
+			</div>
 		</div>
 	</body>
 </html>

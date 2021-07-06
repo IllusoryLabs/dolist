@@ -62,11 +62,11 @@ if (isset($_POST['username'], $_POST['password'], $_POST['cpassword'], $_POST['e
 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
 	</head>
 	<body class="loggedin">
-		<nav class="navtop">
+	<nav class="navtop">
 			<div>
 				<h1>DoList</h1>
 				<a href="home.php"><i class="fas fa-home"></i>Home</a>
-				<a href="reminders.php"><i class="far fa-sticky-note"></i>Reminders</a>
+				<a href="remindersPage.php"><i class="far fa-sticky-note"></i>Reminders</a>
 				<a href="groups.php"><i class="fas fa-users"></i>Groups</a>
 				<a href="profile.php"><i class="fas fa-user-circle"></i>Profile</a>
 				<?php if ($_SESSION['role'] == 'Admin'): ?>

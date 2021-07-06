@@ -1,4 +1,4 @@
 <?php
 //Number of Reminders
-define('numGroups', 0);
+$numGroups = 0;
 ?>
