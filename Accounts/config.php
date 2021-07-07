@@ -15,5 +15,5 @@ define('account_activation', false);
 // Change "Your Company Name" and "yourdomain.com", do not remove the < and >
 define('mail_from', 'Your Company Name <judeaugust@icloud.com>');
 // Link to activation file, update this
-define('activation_link', 'http://yourdomain.com//activate.php');
+define('activation_link', 'http://localhost/DoList/Accounts/activate.php');
 ?>

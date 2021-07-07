@@ -11,9 +11,8 @@ $username = $_SESSION['name'];
 $numReminders = $pdo -> query("SELECT COUNT(*) FROM reminders WHERE username LIKE '$username'");
 $remindersCount = $numReminders -> fetch(PDO::FETCH_ASSOC);
 
-$query = $pdo -> query("SELECT SUBSTRING('reminder', 1, 50) AS ExtractString FROM reminders WHERE username='$username'");
-$result = $query -> execute();
-
+/*$query = $pdo -> query("SELECT SUBSTRING('reminder', 1, 50) AS ExtractString FROM reminders WHERE username='$username'");
+$reminder = $query -> execute();*/
 
 function ifReminders($remindersCount) {
     if (implode($remindersCount) !== '0') {
@@ -21,9 +20,24 @@ function ifReminders($remindersCount) {
     }
 }
 
-function DisplayReminders($remindersCount, $result) {
+function ifRemindersHome($remindersCount) {
     if (implode($remindersCount) !== '0') {
-        echo $result;
+        echo 'Here are some personal reminders you have:';
+    }
+}
+
+function DisplayReminders($remindersCount, $pdo, $reminder, $username) {
+    if (implode($remindersCount) !== '0') {
+
+        $stmt = $pdo->prepare("SELECT * FROM 'reminders' WHERE username='$username'");
+        $stmt->execute();
+        $reminder = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        ?>
+        <!DOCTYPE html>
+            <td><?=$reminder['reminder']?></td>
+        </html>
+        <?php
     }
 }
 
@@ -40,9 +54,24 @@ function ifEndingReminders($remindersCount) {
     }
 }
 
-function DisplayEndingReminders($remindersCount, $result) {
+function ifEndingRemindersHome($remindersCount) {
     if (implode($remindersCount) !== '0') {
-        echo $result;
+        echo 'Here are some personal reminders you have that are ending soon:';
+    }
+}
+
+function DisplayEndingReminders($remindersCount, $pdo, $reminder, $username) {
+    if (implode($remindersCount) !== '0') {
+
+        $stmt = $pdo->prepare("SELECT * FROM reminders WHERE username='$username'");
+        $stmt->execute();
+        $reminder = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        ?>
+        <!DOCTYPE html>
+            <td><?=$reminder['reminder']?></td>
+        </html>
+        <?php
     }
 }
 

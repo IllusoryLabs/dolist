@@ -34,7 +34,7 @@ include 'reminders.php';
 
 				<p class="block">
 					<?php
-					DisplayEndingReminders($remindersCount, $result);
+					DisplayEndingReminders($remindersCount, $pdo, $result, $username);
 					ifNoEndingReminders($remindersCount);
     	        ?>
 				</p>
@@ -49,7 +49,7 @@ include 'reminders.php';
 
 				<p class="block">
 					<?php
-					DisplayEndingReminders($remindersCount, $result);
+					DisplayEndingReminders($remindersCount, $pdo, $result, $username);
 					ifNoEndingReminders($remindersCount);
             	?>
 				</p>

@@ -289,3 +289,101 @@ body.loggedin {
   width: 450px;
   float: right;
 }
+
+
+.addreminder {
+  width: 1000px;
+  background-color: #ffffff;
+  box-shadow: 0 0 9px 0 rgba(0, 0, 0, 0.3);
+  margin: 100px auto;
+}
+
+.addreminder h1 {
+  text-align: center;
+  color: #5b6574;
+  font-size: 24px;
+  padding: 20px 0 20px 0;
+  border-bottom: 1px solid #dee0e4;
+}
+
+.addreminder h2{
+  text-align: center;
+  color: #5b6574;
+  font-size: 20px;
+  padding: 20px 0 20px 0;
+}
+
+.addreminder h3{
+  text-align: center;
+  color: #5b6574;
+  font-size: 16px;
+  padding: 20px 0 20px 0;
+}
+
+.addreminder form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding-top: 20px;
+}
+
+.addreminder form label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 12%;
+  height: 50px;
+  background-color: #3274d6;
+  color: #ffffff;
+}
+
+.addreminder form input[type="datetime-local"], .addreminder form input[type="text"] {
+  width: 80%;
+  height: 50px;
+  border: 1px solid #dee0e4;
+  margin-bottom: 20px;
+  padding: 0 15px;
+}
+
+.addreminder form input[type="checkbox"] {
+  width: 25px;
+  height: 25;
+  border: 1px solid #dee0e4;
+  margin-bottom: 20px;
+  padding: 0 15px;
+  text-align: center;
+}
+
+.addreminder form input[type="submit"] {
+  width: 100%;
+  padding: 15px;
+  margin-top: 20px;
+  background-color: #3274d6;
+  border: 0;
+  cursor: pointer;
+  font-weight: bold;
+  color: #ffffff;
+  transition: background-color 0.2s;
+  border-radius: 0;
+  -webkit-border-radius: 0;
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+}
+
+.addreminder form input[type="submit"]:hover {
+  background-color: #2868c7;
+  transition: background-color 0.2s;
+}
+
+.addreminder form > a {
+  text-decoration: none;
+  color: #5b6574;
+  width: 100%;
+  padding: 5px 20px;
+  text-align: center;
+}
+
+.addreminder form > a:hover {
+  color: #394049;
+}

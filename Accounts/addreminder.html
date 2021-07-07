@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,minimum-scale=1">
+		<title>Register</title>
+		<link href="style.css" rel="stylesheet" type="text/css">
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
+	</head>
+	<body>
+		<div class="addreminder">
+			<a href="javascript:history.back()"><h2 style="padding-bottom: 5px;">< Back</h2></a>
+			<h1 style="padding-top: 5px;">Add a reminder</h1>
+			<form action="addreminder.php" method="post" autocomplete="off">
+                <h2 class="content">Reminder</h2>
+                <br>
+				<label for="reminder">
+					<i class="far fa-clipboard"></i>
+				</label>
+				<input type="text" name="reminder" placeholder="What do you need to be reminded about? (Required)" id="reminder" required>
+                <br><br>
+                <div class="content" style="text-align:center;"> <input type="checkbox" name="repeat" id="repeat"> Repeat reminder </div>
+                <h2 class="content">End Date</h2>
+                <br>
+				<label for="password">
+					<i class="fas fa-clock"></i>
+				</label>
+				<input type="datetime-local" name="date" placeholder="End date" id="enddate">
+				<input type="submit" value="Add Reminder">
+			</form>
+		</div>
+		<script>
+		var form = document.querySelector('.register form');
+		form.onsubmit = function(event) {
+			event.preventDefault();
+			var form_data = new FormData(form);
+			var xhr = new XMLHttpRequest();
+			xhr.open('POST', form.action, true);
+			xhr.onload = function () {
+				document.querySelector('.msg').innerHTML = this.responseText;
+			};
+			xhr.send(form_data);
+		};
+		</script>
+	</body>
+</html>
